@@ -135,3 +135,4 @@ function loaderOn() {
 function loaderOff() {
     document.getElementById('loader').classList.add('hidden');
 }
+

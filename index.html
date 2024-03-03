@@ -45,10 +45,31 @@
 
                 </div>
                 <div>
-                    <button
-                        class="btn btn-secondary bg-[#797DFC] border-none rounded-3xl lg:px-8 font-semibold text-base hover:bg-[#696ee9]">Sign
-                        In</button>
-
+                    <button onclick="my_modal_2.showModal()"
+                    class="btn btn-secondary bg-[#797DFC] border-none rounded-3xl lg:px-8 font-semibold text-base hover:bg-[#696ee9]">
+                        Sign In
+                    </button>
+                    <!-- Open the modal using ID.showModal() method -->
+                <dialog id="my_modal_2" class="modal">
+                    <div class="modal-box p-[80px] text-center bg-[#0d2d3b]">
+                        <h3 class="font-medium text-4xl text-white">LOGIN!</h3>
+                        <input
+                            class="block text-center my-[20px] mx-auto bg-[#0d2d3b] w-[250px] border-solid border-[2px] border-[#96a3ac] py-[14px] px-[10px] outline-none text-white rounded-3xl duration-200 focus:w-[300px] focus:border-[#797DFC]"
+                            type="text" placeholder="Username">
+                        <input
+                            class="block text-center my-[20px] mx-auto bg-[#0d2d3b] w-[250px] border-solid border-[2px] border-[#96a3ac] py-[14px] px-[10px] outline-none text-white rounded-3xl duration-200 focus:w-[300px] focus:border-[#797DFC]"
+                            type="text" placeholder="Password">
+                
+                        <input
+                            class="block text-center my-[20px] mx-auto  bg-gradient-to-r from-[#797DFC] to-[#244b9e] w-[250px] border-solid border-[2px]border-[#0d2d3b] py-[14px] px-[10px] outline-none text-white rounded-3xl duration-200 hover:scale-x-[1.01] cursor-pointer"
+                            type="button" value="LOGIN">
+                            <p class="text-white text-sm">Don't have an account?</p>
+                            <a class="text-white text-sm underline" href="#">Sign up</a>
+                    </div>
+                    <form method="dialog" class="modal-backdrop">
+                        <button>close</button>
+                    </form>
+                </dialog>
                 </div>
             </div>
         </nav>
@@ -65,7 +86,8 @@
                     insights, and fostering connections among members in a friendly and inclusive environment.</p>
                 <label class="input input-bordered h-14 w-[330px]  flex items-center gap-2">
                     <input id="search-input" type="text" class="grow" placeholder="Search here anything" />
-                    <button id="search-button" class="btn btn-secondary bg-[#797DFC] border-none rounded-3xl px-6 font-semibold text-base hover:bg-[#696ee9]">Search</button>
+                    <button id="search-button"
+                        class="btn btn-secondary bg-[#797DFC] border-none rounded-3xl px-6 font-semibold text-base hover:bg-[#696ee9]">Search</button>
                 </label>
             </div>
             <div class="mt-8 w-[330px] h-[250px]  bg-slate-100 py-10 px-12 flex justify-between rounded-[32px]">
@@ -95,38 +117,38 @@
             </div>
             <div class="mt-12 flex flex-col lg:flex-row gap-6">
                 <div class="space-y-6 lg:w-[772px]"><!--Posts Div Container-->
-                <div id="loader" class="hidden text-center space-y-24">
-                    <div>
-                        <span class="loading loading-ring loading-sm"></span>
-                        <span class="loading loading-ring loading-xs"></span>
-                        <span class="loading loading-ring loading-md"></span>
-                        <span class="loading loading-ring loading-lg"></span>
+                    <div id="loader" class="hidden text-center space-y-24">
+                        <div>
+                            <span class="loading loading-ring loading-sm"></span>
+                            <span class="loading loading-ring loading-xs"></span>
+                            <span class="loading loading-ring loading-md"></span>
+                            <span class="loading loading-ring loading-lg"></span>
+                        </div>
+                        <div>
+                            <span class="loading loading-ring loading-sm"></span>
+                            <span class="loading loading-ring loading-xs"></span>
+                            <span class="loading loading-ring loading-md"></span>
+                            <span class="loading loading-ring loading-lg"></span>
+                        </div>
+                        <div>
+                            <span class="loading loading-ring loading-sm"></span>
+                            <span class="loading loading-ring loading-xs"></span>
+                            <span class="loading loading-ring loading-md"></span>
+                            <span class="loading loading-ring loading-lg"></span>
+                        </div>
+                        <div>
+                            <span class="loading loading-ring loading-sm"></span>
+                            <span class="loading loading-ring loading-xs"></span>
+                            <span class="loading loading-ring loading-md"></span>
+                            <span class="loading loading-ring loading-lg"></span>
+                        </div>
                     </div>
-                    <div>
-                        <span class="loading loading-ring loading-sm"></span>
-                        <span class="loading loading-ring loading-xs"></span>
-                        <span class="loading loading-ring loading-md"></span>
-                        <span class="loading loading-ring loading-lg"></span>
+                    <div id="no-data" class="hidden justify-center h-60 lg:h-[455px] items-center">
+                        <p class="lg:text-5xl text-2xl font-medium text-[#929292]">No data found 😌</p>
                     </div>
-                    <div>
-                        <span class="loading loading-ring loading-sm"></span>
-                        <span class="loading loading-ring loading-xs"></span>
-                        <span class="loading loading-ring loading-md"></span>
-                        <span class="loading loading-ring loading-lg"></span>
-                    </div>
-                    <div>
-                        <span class="loading loading-ring loading-sm"></span>
-                        <span class="loading loading-ring loading-xs"></span>
-                        <span class="loading loading-ring loading-md"></span>
-                        <span class="loading loading-ring loading-lg"></span>
-                    </div>
-                </div>
-                <div id="no-data" class="hidden justify-center h-60 lg:h-[455px] items-center">
-                    <p class="lg:text-5xl text-2xl font-medium text-[#929292]">No data found 😌</p>
-                </div>
-                <div id="post-div-container" class="space-y-6 lg:w-[772px]">
-                    
-<!-- posts are here-------------------------------- -->
+                    <div id="post-div-container" class="space-y-6 lg:w-[772px]">
+
+                        <!-- posts are here-------------------------------- -->
 
                     </div>
                 </div>
@@ -135,11 +157,12 @@
                         <h1 class="text-xl font-bold">Title</h1>
                         <div class="flex gap-2">
                             <i class="text-green-500 mt-1 fa-solid fa-check"></i>
-                            <p>Marked as read&nbsp; <span id="mark-count" class=" text-white bg-green-500 rounded-xl px-2 py-1">0</span></p>
+                            <p>Marked as read&nbsp; <span id="mark-count"
+                                    class=" text-white bg-green-500 rounded-xl px-2 py-1">0</span></p>
                         </div>
                     </div>
                     <div id="marked-div" class="mt-4 space-y-4"><!--post Title append Div-->
-    <!-- title append here ------------------------------------------->
+                        <!-- title append here ------------------------------------------->
                     </div>
                 </div>
             </div>
@@ -176,7 +199,7 @@
             </div>
             <!-- latest posts container -->
             <div id="latest-post-container" class="grid grid-cols-1 lg:grid-cols-3 mt-8 gap-6">
-<!-- latest posts are here---------------------------------- -->
+                <!-- latest posts are here---------------------------------- -->
             </div>
         </section>
     </main>
