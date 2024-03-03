@@ -99,7 +99,7 @@ function displayLatestPosts(posts) {
     posts.forEach((post => {
         // console.log(post);
         const newDiv = document.createElement('div');
-        newDiv.setAttribute('class', 'p-6 border solid  rounded-2xl space-y-3');
+        newDiv.setAttribute('class', 'p-6 border solid rounded-2xl space-y-3');
         newDiv.innerHTML = `
         <img class="rounded-2xl"
                         src="${post?.cover_image || 'No Image'}"
@@ -109,7 +109,7 @@ function displayLatestPosts(posts) {
                     </p>
                     <p class="text-base">${post.description}</p>
                     <!-- author -->
-                    <div class="flex gap-4">
+                    <div class=" flex gap-4">
                         <div class="w-[70px] h-[70px] "><img class="rounded-full"
                                 src="${post.profile_image}"
                                 alt=""></div>

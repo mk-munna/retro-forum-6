@@ -57,7 +57,7 @@ const markRead = ()=>{
 
             const markedDiv = document.getElementById('marked-div');
             const newDiv = document.createElement('div');
-            newDiv.setAttribute('class', 'flex gap-4 bg-gray-50 rounded-xl p-3');
+            newDiv.setAttribute('class', 'shadow-xl flex gap-4 bg-gray-50 rounded-xl p-3');
             newDiv.innerHTML = `
             <p class="text-base font-semibold">${postTitle}</p>
                             <div class="w-[150px]">
