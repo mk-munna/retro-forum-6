@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MK Forum</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
     <!-- daisy -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -60,11 +61,11 @@
                             class="block text-center my-[20px] mx-auto bg-[#0d2d3b] w-[250px] border-solid border-[2px] border-[#96a3ac] py-[14px] px-[10px] outline-none text-white rounded-3xl duration-200 focus:w-[300px] focus:border-[#797DFC]"
                             type="text" placeholder="Password">
                 
-                        <input
+                        <input onclick="location.reload()"
                             class="block text-center my-[20px] mx-auto  bg-gradient-to-r from-[#797DFC] to-[#244b9e] w-[250px] border-solid border-[2px]border-[#0d2d3b] py-[14px] px-[10px] outline-none text-white rounded-3xl duration-200 hover:scale-x-[1.01] cursor-pointer"
                             type="button" value="LOGIN">
                             <p class="text-white text-sm">Don't have an account?</p>
-                            <a class="text-white text-sm underline" href="#">Sign up</a>
+                            <a  onclick="location.reload()" class="text-white text-sm underline" href="#">Sign up</a>
                     </div>
                     <form method="dialog" class="modal-backdrop">
                         <button>close</button>
@@ -144,7 +145,7 @@
                         </div>
                     </div>
                     <div id="no-data" class="hidden justify-center h-60 lg:h-[455px] items-center">
-                        <p class="lg:text-5xl text-2xl font-medium text-[#929292]">No data found 😌</p>
+                        <p class="lg:text-5xl text-2xl font-medium text-[#929292]">No Post Found 😌</p>
                     </div>
                     <div id="post-div-container" class="space-y-6 lg:w-[772px]">
 
