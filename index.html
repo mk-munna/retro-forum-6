@@ -65,8 +65,7 @@
                     insights, and fostering connections among members in a friendly and inclusive environment.</p>
                 <label class="input input-bordered h-14 w-[330px]  flex items-center gap-2">
                     <input id="search-input" type="text" class="grow" placeholder="Search here anything" />
-                    <button
-                        class="btn btn-secondary bg-[#797DFC] border-none rounded-3xl px-6 font-semibold text-base hover:bg-[#696ee9]">Search</button>
+                    <button id="search-button" class="btn btn-secondary bg-[#797DFC] border-none rounded-3xl px-6 font-semibold text-base hover:bg-[#696ee9]">Search</button>
                 </label>
             </div>
             <div class="mt-8 w-[330px] h-[250px]  bg-slate-100 py-10 px-12 flex justify-between rounded-[32px]">
@@ -95,7 +94,7 @@
                     cultivating shared knowledge.</p>
             </div>
             <div class="mt-12 flex flex-col lg:flex-row gap-6">
-                <div id="post-div-container" class="space-y-6 lg:w-[835px]"><!--Posts Div Container-->
+                <div class="space-y-6 lg:w-[772px]"><!--Posts Div Container-->
                 <div id="loader" class="hidden text-center space-y-24">
                     <div>
                         <span class="loading loading-ring loading-sm"></span>
@@ -122,6 +121,10 @@
                         <span class="loading loading-ring loading-lg"></span>
                     </div>
                 </div>
+                <div id="no-data" class="hidden justify-center h-60 lg:h-[455px] items-center">
+                    <p class="lg:text-5xl text-2xl font-medium text-[#929292]">No data found 😌</p>
+                </div>
+                <div id="post-div-container" class="space-y-6 lg:w-[772px]">
                     <!-- <div class=" p-4 lg:p-10 bg-[#797DFC1A] rounded-3xl">
                         <div class="flex gap-6">
                             <div class="w-[70px] h-[70px] relative">
@@ -152,9 +155,9 @@
                             </div>
                         </div>
                     </div> -->
-                    
+                    </div>
                 </div>
-                <div class="bg-gray-100 rounded-3xl lg:w-[450px]  p-6 "><!--Marked Div Container-->
+                <div class="bg-gray-100 rounded-3xl lg:w-[450px] mt-5  p-6 "><!--Marked Div Container-->
                     <div class="flex justify-between">
                         <h1 class="text-xl font-bold">Title</h1>
                         <div class="flex gap-2">
@@ -204,8 +207,8 @@
                     news, and insights from a evolving community..</p>
             </div>
             <!-- latest posts container -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 mt-8 gap-6">
-                <div class="p-6 border solid  rounded-2xl space-y-3"> <!--posts div-->
+            <div id="latest-post-container" class="grid grid-cols-1 lg:grid-cols-3 mt-8 gap-6">
+                <!-- <div class="p-6 border solid  rounded-2xl space-y-3"> 
                     <img class="rounded-2xl"
                         src="https://img.freepik.com/free-photo/businesspeople-standing-outside-office-building_107420-74307.jpg?w=740&t=st=1709416706~exp=1709417306~hmac=f1a8d59f1b3839fa4900e2cf8d7fda13f43c8b3e65e2b2a787024e82da57345a"
                         alt="">
@@ -213,7 +216,7 @@
                     <p class="font-extrabold text-lg">What will a mars habitat force that impact in our daily life!!!
                     </p>
                     <p class="text-base">Yes, you can run unit tests and view the results directly within the app.</p>
-                    <!-- author -->
+                    
                     <div class="flex gap-4">
                         <div class="w-[70px] h-[70px] "><img class="rounded-full"
                                 src="https://as2.ftcdn.net/v2/jpg/02/14/74/61/1000_F_214746128_31JkeaP6rU0NzzzdFC4khGkmqc8noe6h.jpg"
@@ -224,44 +227,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="p-6 border solid  rounded-2xl space-y-3"> <!--posts div-->
-                    <img class="rounded-2xl"
-                        src="https://img.freepik.com/free-photo/businesspeople-standing-outside-office-building_107420-74307.jpg?w=740&t=st=1709416706~exp=1709417306~hmac=f1a8d59f1b3839fa4900e2cf8d7fda13f43c8b3e65e2b2a787024e82da57345a"
-                        alt="">
-                    <p><i class="fa-regular fa-calendar-check text-sm"></i> <span> &nbsp;29 January 2024</span></p>
-                    <p class="font-extrabold text-lg">What will a mars habitat force that impact in our daily life!!!
-                    </p>
-                    <p class="text-base">Yes, you can run unit tests and view the results directly within the app.</p>
-                    <!-- author -->
-                    <div class="flex gap-4">
-                        <div class="w-[70px] h-[70px] "><img class="rounded-full"
-                                src="https://as2.ftcdn.net/v2/jpg/02/14/74/61/1000_F_214746128_31JkeaP6rU0NzzzdFC4khGkmqc8noe6h.jpg"
-                                alt=""></div>
-                        <div>
-                            <h1 class="text-base font-extrabold">Dianne Russell</h1>
-                            <h1 class="text-sm">Developer</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-6 border solid  rounded-2xl space-y-3"> <!--posts div-->
-                    <img class="rounded-2xl"
-                        src="https://img.freepik.com/free-photo/businesspeople-standing-outside-office-building_107420-74307.jpg?w=740&t=st=1709416706~exp=1709417306~hmac=f1a8d59f1b3839fa4900e2cf8d7fda13f43c8b3e65e2b2a787024e82da57345a"
-                        alt="">
-                    <p><i class="fa-regular fa-calendar-check text-sm"></i> <span> &nbsp;29 January 2024</span></p>
-                    <p class="font-extrabold text-lg">What will a mars habitat force that impact in our daily life!!!
-                    </p>
-                    <p class="text-base">Yes, you can run unit tests and view the results directly within the app.</p>
-                    <!-- author -->
-                    <div class="flex gap-4">
-                        <div class="w-[70px] h-[70px] "><img class="rounded-full"
-                                src="https://as2.ftcdn.net/v2/jpg/02/14/74/61/1000_F_214746128_31JkeaP6rU0NzzzdFC4khGkmqc8noe6h.jpg"
-                                alt=""></div>
-                        <div>
-                            <h1 class="text-base font-extrabold">Dianne Russell</h1>
-                            <h1 class="text-sm">Developer</h1>
-                        </div>
-                    </div>
-                </div>
+-->
             </div>
         </section>
     </main>

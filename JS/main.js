@@ -1,21 +1,36 @@
 
 
-const getData = async () => {
-    const response = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts');
+const getData = async (url) => {
+    loaderOn()
+    const response = await fetch(url);
     const data = await response.json();
     const posts = data.posts;
     displayData(posts);
+    // console.log(url);
     // console.log(data.posts);
 };
-loaderOn()
-getData();
+
+const noData = document.getElementById('no-data');
+const postDivContainer = document.getElementById('post-div-container');
+
+getData(`https://openapi.programming-hero.com/api/retro-forum/posts`);//default data displaying
 const displayData = (posts) => {
-    const postDivContainer = document.getElementById('post-div-container');
-    const post = posts.forEach(post => {
+    if (posts.length === 0) {
+        setTimeout(() => {
+            loaderOff(); 
+            noData.classList.remove('hidden');
+            noData.classList.add('flex')
+        }, 2000);
+    } else {
+        noData.classList.remove('flex');
+        noData.classList.add('hidden');
+    }
+    posts.forEach(post => {
         // console.log(post);
         if (post.isActive) {
             const active = 'bg-green-700 '
             createPost(active, post);
+            // console.log(posts);
         } else {
             const inactive = 'bg-red-200 '
             createPost(inactive, post);
@@ -56,10 +71,61 @@ const displayData = (posts) => {
                 loaderOff();
                 postDivContainer.appendChild(postDiv);
                 markRead();
-            },2000);  
+            }, 2000);
         }
     });
 }
+
+
+document.getElementById('search-button').addEventListener('click', function () {
+    const searchInputText = document.getElementById('search-input').value;
+    const postDivContainer = document.getElementById('post-div-container');
+
+    noData.classList.remove('flex');
+    noData.classList.add('hidden');
+    postDivContainer.textContent = ''
+    const searchUrl = `https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchInputText}`
+    getData(searchUrl);
+})
+
+const getLatestPosts = async () => {
+    const response = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts');
+    const data = await response.json();
+    const posts = data;
+    displayLatestPosts(posts);
+}
+function displayLatestPosts(posts) {
+    const latestPostContainer = document.getElementById('latest-post-container');
+    posts.forEach((post => {
+        // console.log(post);
+        const newDiv = document.createElement('div');
+        newDiv.setAttribute('class', 'p-6 border solid  rounded-2xl space-y-3');
+        newDiv.innerHTML = `
+        <img class="rounded-2xl"
+                        src="${post?.cover_image || 'No Image'}"
+                        alt="">
+                    <p><i class="fa-regular fa-calendar-check text-sm"></i> <span> &nbsp;${post?.author?.posted_date || 'No Publish Date'}</span></p>
+                    <p class="font-extrabold text-lg">${post.title}
+                    </p>
+                    <p class="text-base">${post.description}</p>
+                    <!-- author -->
+                    <div class="flex gap-4">
+                        <div class="w-[70px] h-[70px] "><img class="rounded-full"
+                                src="${post.profile_image}"
+                                alt=""></div>
+                        <div>
+                            <h1 class="text-base font-extrabold">${post.author.name}</h1>
+                            <h1 class="text-sm">${post?.author?.designation || 'Unknown'}</h1>
+                        </div>
+                    </div>
+        `;
+        latestPostContainer.appendChild(newDiv);
+    }))
+}
+
+
+
+getLatestPosts()
 
 // loader
 function loaderOn() {
