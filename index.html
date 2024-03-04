@@ -118,33 +118,26 @@
             </div>
             <div class="mt-12 flex flex-col lg:flex-row gap-6">
                 <div class="space-y-6 lg:w-[772px]"><!--Posts Div Container-->
-                    <div id="loader" class="hidden text-center space-y-24">
-                        <div>
-                            <span class="loading loading-ring loading-sm"></span>
-                            <span class="loading loading-ring loading-xs"></span>
-                            <span class="loading loading-ring loading-md"></span>
-                            <span class="loading loading-ring loading-lg"></span>
+                    <!-- Loader 1-->
+                    <div id="loader" class="animate-pulse mt-5 hidden lg:w-[772px] space-y-6">
+                        <!-- loader Item 1-->
+                        <div class="p-4 lg:p-10 bg-gray-300 rounded-3xl">
+                            <div class="flex gap-6">
+                                <div class="w-[70px] h-[70px] bg-gray-400 rounded-md"></div>
+                                <div class="text-sm w-3/4">
+                                    <span class="bg-gray-400 h-4 block mb-2 w-1/2"></span>
+                                    <span class="bg-gray-400 h-4 block"></span>
+                                </div>
+                            </div>
+                            <div class="text-base font-semibold text-gray-400 mt-4 space-y-3">
+                                <span class="bg-gray-400 h-6 w-3/4 block mb-2"></span>
+                                <span class="bg-gray-400 h-4 w-1/4 block"></span>
+                            </div>
                         </div>
-                        <div>
-                            <span class="loading loading-ring loading-sm"></span>
-                            <span class="loading loading-ring loading-xs"></span>
-                            <span class="loading loading-ring loading-md"></span>
-                            <span class="loading loading-ring loading-lg"></span>
-                        </div>
-                        <div>
-                            <span class="loading loading-ring loading-sm"></span>
-                            <span class="loading loading-ring loading-xs"></span>
-                            <span class="loading loading-ring loading-md"></span>
-                            <span class="loading loading-ring loading-lg"></span>
-                        </div>
-                        <div>
-                            <span class="loading loading-ring loading-sm"></span>
-                            <span class="loading loading-ring loading-xs"></span>
-                            <span class="loading loading-ring loading-md"></span>
-                            <span class="loading loading-ring loading-lg"></span>
-                        </div>
+                        <!-- loader Item done -->
+                    
                     </div>
-                    <div id="no-data" class="hidden justify-center h-60 lg:h-[455px] items-center">
+                    <div id="no-data" class="hidden justify-center h-20 lg:h-[215px] items-center">
                         <p class="lg:text-5xl text-2xl font-medium text-[#929292]">No Post Found 😌</p>
                     </div>
                     <div id="post-div-container" class="space-y-6 lg:w-[772px]">
@@ -197,6 +190,50 @@
                 <p class="text-center ">Explore a diverse array of up-to-date content, spanning various topics. Stay
                     informed and <br>engaged with the latest ideas,
                     news, and insights from a evolving community..</p>
+            </div>
+            <div id="loader-2" class="grid mt-8 animate-pulse grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- loader Item 1-->
+                <div class="p-6 border solid rounded-2xl space-y-8">
+                    <div class="w-full h-[200px] bg-gray-300 rounded-2xl"></div>
+                    <p class="bg-gray-300 h-4 w-1/2 mb-2"></p>
+                    <p class="bg-gray-300 h-6 w-3/4 font-extrabold"></p>
+                    <p class="bg-gray-300 h-4 w-full"></p>
+                    <div class="flex gap-4 mt-4">
+                        <div class="w-[70px] h-[70px] bg-gray-300 rounded-full"></div>
+                        <div>
+                            <h1 class="bg-gray-300 h-6 w-3/4 font-extrabold"></h1>
+                            <h1 class="bg-gray-300 h-4 w-1/2"></h1>
+                        </div>
+                    </div>
+                </div>
+                <!-- loader Item 2-->
+                <div class="p-6 border solid rounded-2xl space-y-3">
+                    <div class="w-full h-[200px] bg-gray-300 rounded-2xl"></div>
+                    <p class="bg-gray-300 h-4 w-1/2 mb-2"></p>
+                    <p class="bg-gray-300 h-6 w-3/4 font-extrabold"></p>
+                    <p class="bg-gray-300 h-4 w-full"></p>
+                    <div class="flex gap-4 mt-4">
+                        <div class="w-[70px] h-[70px] bg-gray-300 rounded-full"></div>
+                        <div>
+                            <h1 class="bg-gray-300 h-6 w-3/4 font-extrabold"></h1>
+                            <h1 class="bg-gray-300 h-4 w-1/2"></h1>
+                        </div>
+                    </div>
+                </div>
+                <!-- loader Item 3 -->
+                <div class="p-6 border solid rounded-2xl space-y-3">
+                    <div class="w-full h-[200px] bg-gray-300 rounded-2xl"></div>
+                    <p class="bg-gray-300 h-4 w-1/2 mb-2"></p>
+                    <p class="bg-gray-300 h-6 w-3/4 font-extrabold"></p>
+                    <p class="bg-gray-300 h-4 w-full"></p>
+                    <div class="flex gap-4 mt-4">
+                        <div class="w-[70px] h-[70px] bg-gray-300 rounded-full"></div>
+                        <div>
+                            <h1 class="bg-gray-300 h-6 w-3/4 font-extrabold"></h1>
+                            <h1 class="bg-gray-300 h-4 w-1/2"></h1>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- latest posts container -->
             <div id="latest-post-container" class="grid grid-cols-1 lg:grid-cols-3 mt-8 gap-6">

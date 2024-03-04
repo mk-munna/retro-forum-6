@@ -1,11 +1,38 @@
-
-
+const loader1CReate = (loopNumber) => {
+    const getLoaderDiv = document.getElementById('loader');
+    getLoaderDiv.innerHTML='';
+    for (let i = 0; i < loopNumber; i++) {
+        const newDiv = document.createElement('div');
+        newDiv.setAttribute('class', 'p-4 lg:p-10 bg-gray-300 rounded-3xl');
+        newDiv.innerHTML = `
+        <div class="flex gap-6">
+                                <div class="w-[70px] h-[70px] bg-gray-400 rounded-md"></div>
+                                <div class="text-sm w-3/4">
+                                    <span class="bg-gray-400 h-4 block mb-2 w-1/2"></span>
+                                    <span class="bg-gray-400 h-4 block"></span>
+                                </div>
+                            </div>
+                            <div class="text-base font-semibold text-gray-400 mt-4 space-y-3">
+                                <span class="bg-gray-400 h-6 w-3/4 block mb-2"></span>
+                                <span class="bg-gray-400 h-4 w-1/4 block"></span>
+                            </div>
+        `
+    getLoaderDiv.appendChild(newDiv)
+    }
+}
 const getData = async (url) => {
-    loaderOn()
+    loader1On()
     const response = await fetch(url);
     const data = await response.json();
     const posts = data.posts;
+    // console.log(posts.length);
+    if (posts.length === 0) {
+        loader1CReate(1)
+    } else {
+        loader1CReate(posts.length)
+    }
     displayData(posts);
+    
     // console.log(url);
     // console.log(data.posts);
 };
@@ -17,7 +44,7 @@ getData(`https://openapi.programming-hero.com/api/retro-forum/posts`);//default 
 const displayData = (posts) => {
     if (posts.length === 0) {
         setTimeout(() => {
-            loaderOff(); 
+            loader1Off(); 
             noData.classList.remove('hidden');
             noData.classList.add('flex')
         }, 2000);
@@ -68,7 +95,7 @@ const displayData = (posts) => {
             // console.log(postDiv);
             // console.log(post);
             setTimeout(() => {
-                loaderOff();
+                loader1Off();
                 postDivContainer.appendChild(postDiv);
                 markRead();
             }, 2000);
@@ -95,6 +122,7 @@ const getLatestPosts = async () => {
     displayLatestPosts(posts);
 }
 function displayLatestPosts(posts) {
+    loader2On()
     const latestPostContainer = document.getElementById('latest-post-container');
     posts.forEach((post => {
         // console.log(post);
@@ -119,7 +147,11 @@ function displayLatestPosts(posts) {
                         </div>
                     </div>
         `;
-        latestPostContainer.appendChild(newDiv);
+
+        setTimeout(() => {
+            loader2Off();
+            latestPostContainer.appendChild(newDiv);
+        }, 2000);
     }))
 }
 
@@ -127,12 +159,19 @@ function displayLatestPosts(posts) {
 
 getLatestPosts()
 
-// loader
-function loaderOn() {
+// loader 1
+function loader1On() {
     document.getElementById('loader').classList.remove('hidden');
 }
 
-function loaderOff() {
+function loader1Off() {
     document.getElementById('loader').classList.add('hidden');
 }
+// loader 2
+function loader2On() {
+    document.getElementById('loader-2').classList.remove('hidden');
+}
 
+function loader2Off() {
+    document.getElementById('loader-2').classList.add('hidden');
+}
