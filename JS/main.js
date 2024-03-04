@@ -64,7 +64,7 @@ const displayData = (posts) => {
         }
         function createPost(isActive, post) {
             const postDiv = document.createElement('div');
-            postDiv.setAttribute('class', 'post-div p-4 lg:p-10 bg-[#797DFC1A] rounded-3xl');
+            postDiv.setAttribute('class', 'post-div -mt-6 p-4 lg:p-10 bg-[#797DFC1A] rounded-3xl');
             postDiv.innerHTML = `
         <div class="flex gap-6">
                             <div class="w-[70px] h-[70px] relative">
